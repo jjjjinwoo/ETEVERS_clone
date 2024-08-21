@@ -160,6 +160,11 @@
   top: 0;
   left: 0;
 }
+.main_section2 .bottom_hand {
+  position: absolute;
+  bottom: -50px;
+  right: 0;
+}
 .main_section2 .text_box .semi_title {
   font-size: 3em;
   font-weight: 600;

@@ -2,6 +2,22 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css);
 @import url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css);
 
+/* 스크롤바 */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #1350ff;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-button {
+  display: none;
+}
+
 /* 공통 */
 
 body {

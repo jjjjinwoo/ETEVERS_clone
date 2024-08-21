@@ -7,18 +7,13 @@
     <!-- css -->
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/index.css" />
-    <!-- 스크롤 천천히 부드럽게 내리는 라이브러리 -->
-    <script
-      src="https://code.jquery.com/jquery-3.6.4.min.js"
-      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
-      crossorigin="anonymous"
-    ></script>
-    <script src="http://fatlinesofcode.github.io/jquery.smoothwheel/src/jquery.smoothwheel.js"></script>
-
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <!-- 스크롤 트리거 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <!-- 스크롤 트리거 불러오기(플러그인 안정화) -->
     <script>
-      $(document).ready(function () {
-        $("html").smoothWheel();
-      });
+      gsap.registerPlugin(ScrollTrigger);
     </script>
   </head>
   <body>
@@ -88,7 +83,7 @@
       </section>
       <section class="main_section2">
         <div class="top_hand">
-          <img src="./img/main/section2-1.png" alt="hand1" />
+          <img src="./img/main/section2-1.png" alt="top_hand" />
         </div>
         <div class="text_box">
           <p class="semi_title">Challenge for</p>
@@ -99,9 +94,13 @@
             다음 세대를 위한 IT 솔루션과 서비스를 준비합니다.
           </p>
         </div>
+        <div class="bottom_hand">
+          <img src="./img/main/section2-2.png" alt="bottom_hand" />
+        </div>
       </section>
     </main>
     <footer></footer>
     <script src="./js/common.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

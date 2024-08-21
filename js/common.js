@@ -30,5 +30,3 @@ function mouseOutBlackbox() {
     headerSubmenu[i].style.opacity = "";
   }
 }
-
-// 스크롤 부드럽게 내리는 효과
