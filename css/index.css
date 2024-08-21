@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+/* 메인 가운데 라인 애니메이션 */
+
+.main_line_con {
+  position: fixed;
+  top: 0;
+  left: calc(50% - 2px);
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100vh;
+  background: transparent;
+  z-index: 99;
+}
+.main_line_con > div {
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgb(255, 255, 255)
+  );
+  animation-name: rain;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  border-radius: 100%;
+}
+@keyframes rain {
+  0% {
+    transform: translateY(-400px);
+  }
+  100% {
+    transform: translateY(900px);
+  }
+}
+
+/* 섹션1 */
+
+.main_section1 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 940px;
+  background-color: #09001d;
+}
+.main_section1 .bg_box {
+  background: url(../img/main/main-section1-bg.png) no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.main_section1 .text_box {
+  position: relative;
+  z-index: 1;
+}
+.main_section1 .text_box h2 {
+  text-align: center;
+  color: white;
+  font-weight: 800;
+}
+.main_section1 .text_box h2:first-child {
+  font-size: 11.25em;
+  margin-bottom: 30px;
+}
+.main_section1 .text_box h2:last-child {
+  font-size: 7.5em;
+}
+
+.main_section1 .scroll_down {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  writing-mode: vertical-rl;
+  font-family: Pretendard;
+  font-size: 0.75em;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: rgba(255, 255, 255);
+  opacity: 0.15;
+  margin-left: 15px;
+  animation-name: upDown;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
+@keyframes upDown {
+  0% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(-50%) translateY(10px);
+  }
+  100% {
+    opacity: 0.15;
+  }
+}
+
+/* 섹션2 */
+
+.main_section2 {
+  background-color: #09001d;
+  height: 1340px;
+}
