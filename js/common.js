@@ -1,12 +1,10 @@
 "use strict";
 
-/// 헤더 호버 시 서브메뉴 출력하는 애니메이션
+// 헤더 호버 시 서브메뉴 출력하는 애니메이션
 
 const headerBlackbox = document.querySelector("header .black_box");
 const headerText = document.querySelector("header .text");
 const headerSubmenu = document.querySelectorAll("header .sub_menu");
-
-// 마우스 호버 시
 
 headerText.addEventListener("mouseover", mouseOverBlackbox);
 headerText.addEventListener("mouseover", mouseOverText);
@@ -23,8 +21,6 @@ function mouseOverText() {
   }
 }
 
-// 마우스 아웃 시
-
 headerBlackbox.addEventListener("mouseout", mouseOutBlackbox);
 
 function mouseOutBlackbox() {
@@ -34,3 +30,5 @@ function mouseOutBlackbox() {
     headerSubmenu[i].style.opacity = "";
   }
 }
+
+// 스크롤 부드럽게 내리는 효과
