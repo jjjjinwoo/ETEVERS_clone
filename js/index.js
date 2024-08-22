@@ -111,7 +111,39 @@ gsap.to(".main_section4 .text_box .text,.main_section4 .text_box .title", {
     start: "60% 50%",
     end: "60% 50%",
     scrub: 1,
-    markers: true,
+    markers: false,
   },
   color: "white",
+});
+
+gsap.to(".main_section4 .text_box .title_fill", {
+  scrollTrigger: {
+    trigger: ".main_section4",
+    start: "60% 50%",
+    end: "60% 50%",
+    scrub: 1,
+    markers: false,
+  },
+  "background-image": "-webkit-linear-gradient(transparent 50%, #ffffff 50%)",
+  "-webkit-text-stroke": "1px #ffffff",
+});
+
+const mainText4 = document.querySelector(".main_section4 .text_box .text");
+const mainTitle4 = document.querySelector(".main_section4 .text_box .title");
+const mainTitleFill4 = document.querySelector(
+  ".main_section4 .text_box .title_fill"
+);
+
+document.addEventListener("scroll", () => {
+  if (window.scrollY > 3000) {
+    mainText4.style.animationName = "mainTitle2";
+    mainText4.style.opacity = "1";
+    mainTitle4.style.animationName = "mainTitle2";
+    mainTitle4.style.opacity = "1";
+    mainTitleFill4.style.animationName = "mainTitle1";
+    mainTitleFill4.style.opacity = "1";
+    setTimeout(function () {
+      mainTitleFill4.style.backgroundSize = "100% 376px";
+    }, 500);
+  }
 });

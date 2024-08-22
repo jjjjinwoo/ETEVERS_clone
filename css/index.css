@@ -346,6 +346,9 @@
   text-align: center;
   color: #000;
   margin-bottom: 30px;
+  /* animation-name: mainTitle2; */
+  animation-duration: 1s;
+  opacity: 0;
 }
 .main_section4 .text_box .title {
   font-size: 6.25em;
@@ -354,6 +357,9 @@
   letter-spacing: normal;
   text-align: center;
   color: #000;
+  /* animation-name: mainTitle2; */
+  animation-duration: 1s;
+  opacity: 0;
 }
 .main_section4 .text_box .title_fill {
   -webkit-text-stroke: 1px #0014ba;
@@ -370,4 +376,9 @@
   background-size: 100% 700px;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  background-repeat: no-repeat;
+  /* animation-name: mainTitle1; */
+  animation-duration: 1s;
+  opacity: 0;
+  transition: 1s;
 }
