@@ -41,5 +41,9 @@ function scrollHeader() {
     headerBlackbox.style.transform = "translateY(-460px)";
   } else {
     headerBlackbox.style.transform = "translateY(-330px)";
+    for (var i = 0; i < headerSubmenu.length; i++) {
+      headerSubmenu[i].style.height = "";
+      headerSubmenu[i].style.opacity = "";
+    }
   }
 }

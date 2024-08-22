@@ -262,6 +262,7 @@
   box-sizing: border-box;
   transform: translateX(-100%);
   transition: 0.5s;
+  z-index: 1;
 }
 .main_section3 .count_box span {
   color: white;
@@ -314,6 +315,59 @@
 /* 섹션4 */
 
 .main_section4 {
-  height: 2000px;
-  background-color: #e5d9ff;
+  position: relative;
+  height: fit-content;
+}
+.main_section4 .bg_box {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.main_section4 .bg_box > div {
+  height: 920px;
+  overflow: hidden;
+}
+.main_section4 .text_box {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.main_section4 .text_box .text {
+  font-size: 1.875em;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 1.5px;
+  text-align: center;
+  color: #000;
+  margin-bottom: 30px;
+}
+.main_section4 .text_box .title {
+  font-size: 6.25em;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000;
+}
+.main_section4 .text_box .title_fill {
+  -webkit-text-stroke: 1px #0014ba;
+  font-size: 6.25em;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: center;
+  color: transparent;
+  margin-bottom: 30px;
+  background-image: -webkit-linear-gradient(transparent 50%, #0014ba 50%);
+  background-position: 0 0;
+  background-position: 0 -175px;
+  background-size: 100% 700px;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }

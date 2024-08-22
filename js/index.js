@@ -1,5 +1,23 @@
 "use strict";
 
+// lenis : 스크롤 부드럽게 하는 효과
+
+const lenis = new Lenis({
+  duration: 2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+});
+
+lenis.on("scroll", (e) => {
+  console.log(e);
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
 //섹션2 스크롤 애니메이션 - GSAP
 
 gsap.to(".top_hand", {
@@ -72,4 +90,28 @@ document.addEventListener("scroll", () => {
     document.querySelector(".main_section3 .count_box").style.transform =
       "translateX(0px)";
   }
+});
+
+//섹션4 스크롤 애니메이션 - GSAP
+
+gsap.to(".main_section4 .text_box", {
+  scrollTrigger: {
+    trigger: ".main_section4 .text_box",
+    start: "0% 0%",
+    end: "100% 0%",
+    scrub: 1,
+    markers: false,
+    pin: true,
+  },
+});
+
+gsap.to(".main_section4 .text_box .text,.main_section4 .text_box .title", {
+  scrollTrigger: {
+    trigger: ".main_section4",
+    start: "60% 50%",
+    end: "60% 50%",
+    scrub: 1,
+    markers: true,
+  },
+  color: "white",
 });
