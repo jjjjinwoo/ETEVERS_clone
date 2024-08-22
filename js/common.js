@@ -25,8 +25,21 @@ headerBlackbox.addEventListener("mouseout", mouseOutBlackbox);
 
 function mouseOutBlackbox() {
   headerBlackbox.style.transform = "translateY(-460px)";
+  scrollHeader(); // 헤더 스크롤
   for (var i = 0; i < headerSubmenu.length; i++) {
     headerSubmenu[i].style.height = "";
     headerSubmenu[i].style.opacity = "";
+  }
+}
+
+// 헤더 스크롤
+
+document.addEventListener("scroll", scrollHeader);
+
+function scrollHeader() {
+  if (window.scrollY === 0) {
+    headerBlackbox.style.transform = "translateY(-460px)";
+  } else {
+    headerBlackbox.style.transform = "translateY(-330px)";
   }
 }
