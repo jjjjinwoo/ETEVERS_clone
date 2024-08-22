@@ -128,6 +128,8 @@ gsap.to(".main_section4 .text_box .title_fill", {
   "-webkit-text-stroke": "1px #ffffff",
 });
 
+//섹션4 스크롤 텍스트 애니메이션 - JS
+
 const mainText4 = document.querySelector(".main_section4 .text_box .text");
 const mainTitle4 = document.querySelector(".main_section4 .text_box .title");
 const mainTitleFill4 = document.querySelector(
@@ -146,4 +148,19 @@ document.addEventListener("scroll", () => {
       mainTitleFill4.style.backgroundSize = "100% 376px";
     }, 500);
   }
+});
+
+//섹션6 스크롤 애니메이션 - GSAP
+
+gsap.to(".main_section6 .bg_box", {
+  scrollTrigger: {
+    trigger: ".main_section5",
+    start: "60% 50%",
+    end: "140% 50%",
+    scrub: 1,
+    markers: false,
+  },
+  "clip-path": "inset(0%)",
+  transform: "translate(0px, 0px)",
+  filter: "blur(20px)",
 });
