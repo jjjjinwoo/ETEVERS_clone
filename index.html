@@ -7,6 +7,8 @@
     <!-- css -->
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/index.css" />
+    <!-- Jqeury -->
+    <script src="./js/jquery.min.js"></script>
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <!-- 스크롤 트리거 -->
@@ -125,7 +127,7 @@
               <span class="title">설립연도</span>
               <span class="sub_title">풍부한 시장경험</span>
               <div>
-                <span class="year">1993</span>
+                <span class="year" data-start="0" data-end="1993">0</span>
                 <span class="count">년</span>
               </div>
             </li>
@@ -133,7 +135,7 @@
               <span class="title">매출</span>
               <span class="sub_title">안정적 재무구조</span>
               <div>
-                <span class="year">6,009</span>
+                <span class="year" data-start="0" data-end="6009">0</span>
                 <span class="count">억</span>
               </div>
             </li>
@@ -141,7 +143,7 @@
               <span class="title">파트너사</span>
               <span class="sub_title">파트너십</span>
               <div>
-                <span class="year">1,333</span>
+                <span class="year" data-start="0" data-end="1333">0</span>
                 <span class="count">개</span>
               </div>
             </li>
@@ -149,7 +151,7 @@
               <span class="title">직원수</span>
               <span class="sub_title">IT 전문 인력</span>
               <div>
-                <span class="year">323</span>
+                <span class="year" data-start="0" data-end="323">0</span>
                 <span class="count">명</span>
               </div>
             </li>
@@ -203,8 +205,15 @@
           <img src="./img/main/section6-1.jpg" alt="section6-1" />
         </div>
         <div class="center_box">
-          <div class="inner"></div>
-          <div class="text_box">
+          <div class="inner">
+            <div class="logo_box stroke">
+              <img src="./img/main/section6-2.png" alt="section6-2" />
+            </div>
+            <div class="logo_box fill">
+              <img src="./img/main/section6-3.png" alt="section6-3" />
+            </div>
+          </div>
+          <div class="text_box on">
             <h2 class="title">에티버스 그룹사</h2>
             <p class="text">
               실질적인 사업 DX(디지털 트랜스포메이션)을 이끌어내는<br />
@@ -214,8 +223,114 @@
           </div>
         </div>
       </section>
+      <section class="main_section7">
+        <ul>
+          <li class="card hover">
+            <div class="bg_box">
+              <img src="./img/main/section7-1.jpg" alt="section7-1" />
+            </div>
+            <div class="text_box">
+              <p class="num">0 1</p>
+              <h2 class="title">
+                IT 솔루션<br />
+                공급
+              </h2>
+              <p class="text">고객 니즈에 맞는 최상의 솔루션을 제공</p>
+            </div>
+            <div class="group-list">
+              <div>
+                <a href="#">에티버스</a>
+                <div class="line"></div>
+              </div>
+              <div>
+                <a href="#">에티버스이비티</a>
+                <div class="line"></div>
+              </div>
+            </div>
+          </li>
+          <li class="card hover">
+            <div class="bg_box">
+              <img src="./img/main/section7-2.jpg" alt="section7-2" />
+            </div>
+            <div class="text_box">
+              <p class="num">0 2</p>
+              <h2 class="title">
+                디지털<br />
+                트랜스포메이션
+              </h2>
+              <p class="text">
+                고객 비즈니스 경쟁력 강화를 위한 디지털 전환 동반자
+              </p>
+            </div>
+            <div class="group-list">
+              <div>
+                <a href="#">이테크시스템</a>
+                <div class="line"></div>
+              </div>
+              <div>
+                <a href="#">에티버스이피에이</a>
+                <div class="line"></div>
+              </div>
+              <div>
+                <a href="#">에티버스소프트</a>
+                <div class="line"></div>
+              </div>
+            </div>
+          </li>
+          <li class="card hover">
+            <div class="bg_box">
+              <img src="./img/main/section7-3.jpg" alt="section7-3" />
+            </div>
+            <div class="text_box">
+              <p class="num">0 3</p>
+              <h2 class="title">
+                IT 전문 물류<br />
+                &이커머스
+              </h2>
+              <p class="text">
+                IT 전문 물류 인프라에 따른 풀필먼트 서비스와 경쟁력 있는
+                가격으로 고객 맞춤형 제품 제공
+              </p>
+            </div>
+            <div class="group-list">
+              <div>
+                <a href="#">에티버스이앤엘</a>
+                <div class="line"></div>
+              </div>
+              <div>
+                <a href="#">시소몰</a>
+                <div class="line"></div>
+              </div>
+            </div>
+          </li>
+          <li class="card hover">
+            <div class="bg_box">
+              <img src="./img/main/section7-4.jpg" alt="section7-4" />
+            </div>
+            <div class="text_box">
+              <p class="num">0 4</p>
+              <h2 class="title">
+                SMART<br />
+                LEARNING
+              </h2>
+              <p class="text">
+                에티버스의 글로벌 IT 경험을 활용한 최신 IT 전문 교육 및 글로벌
+                ICT 인재양성
+              </p>
+            </div>
+            <div class="group-list">
+              <div>
+                <a href="#">에티버스 러닝</a>
+                <div class="line"></div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section class="main_section8"></section>
     </main>
     <footer></footer>
+    <!-- JS -->
     <script src="./js/common.js"></script>
     <script src="./js/index.js"></script>
   </body>

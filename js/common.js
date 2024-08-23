@@ -6,8 +6,8 @@ const headerBlackbox = document.querySelector("header .black_box");
 const headerText = document.querySelector("header .text");
 const headerSubmenu = document.querySelectorAll("header .sub_menu");
 
-headerText.addEventListener("mouseover", mouseOverBlackbox);
-headerText.addEventListener("mouseover", mouseOverText);
+headerText.addEventListener("mouseenter", mouseOverBlackbox);
+headerText.addEventListener("mouseenter", mouseOverText);
 
 function mouseOverBlackbox() {
   headerBlackbox.style.transform = "translateY(0px)";
@@ -21,7 +21,7 @@ function mouseOverText() {
   }
 }
 
-headerBlackbox.addEventListener("mouseout", mouseOutBlackbox);
+headerBlackbox.addEventListener("mouseleave", mouseOutBlackbox);
 
 function mouseOutBlackbox() {
   headerBlackbox.style.transform = "translateY(-460px)";
