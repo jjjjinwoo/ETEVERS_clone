@@ -234,9 +234,21 @@ gsap.to(".main_section6 .bg_box", {
     scrub: 1,
     markers: false,
   },
-  "clip-path": "inset(0%)",
-  transform: "translate(0px, 0px)",
+  transform: "translate(0vw, 0%)",
   filter: "blur(20px)",
+  width: "100%",
+  overflow: "hidden",
+});
+
+gsap.to(".main_section6 .bg_box img", {
+  scrollTrigger: {
+    trigger: ".main_section5",
+    start: "60% 50%",
+    end: "140% 50%",
+    scrub: 1,
+    markers: false,
+  },
+  "clip-path": "inset(0%)",
 });
 
 //섹션6 스크롤 애니메이션 - JS
@@ -272,6 +284,36 @@ function logoboxDelayOn2() {
     .classList.add("on");
 }
 
+// 섹션7 스크롤 애니메이션 - JS
+
+const textBox7 = document.querySelectorAll(".main_section7 .card .text_box");
+
+document.addEventListener("scroll", () => {
+  if (window.scrollY > 6600) {
+    for (let j = 0; j < textBox7.length; j++) {
+      setTimeout(function () {
+        textBox7[j].style.transform = "translateX(0px)";
+        textBox7[j].style.opacity = "1";
+      }, 500 * j);
+    }
+  }
+});
+
+const groupList7 = document.querySelectorAll(
+  ".main_section7 .card .group-list"
+);
+
+document.addEventListener("scroll", () => {
+  if (window.scrollY > 6600) {
+    for (let j = 0; j < groupList7.length; j++) {
+      setTimeout(function () {
+        groupList7[j].style.transform = "translateX(0px)";
+        groupList7[j].style.opacity = "1";
+      }, 500 * j);
+    }
+  }
+});
+
 // 섹션7 호버 - JS
 
 const cardList = document.querySelectorAll(".main_section7 .card");
@@ -296,14 +338,39 @@ document.querySelector(".main_section8").addEventListener("mouseover", () => {
   }
 });
 
-// const tabList = document.querySelectorAll("#category div a");
+// 섹션8 커서 이벤트 - JS
 
-// for (var i = 0; i < tabList.length; i++) {
-//   tabList[i].addEventListener("click", function (e) {
-//     e.preventDefault();
-//     for (var j = 0; j < tabList.length; j++) {
-//       tabList[j].classList.remove("is_on");
-//     }
-//     this.classList.add("is_on");
-//   });
-// }
+let mouseCursor = document.querySelector("#cursor");
+window.addEventListener("wheel", cursor);
+window.addEventListener("mousemove", cursor);
+//커스텀 커서의 left값과 top값을 커서의 XY좌표값과 일치시킴
+function cursor(e) {
+  mouseCursor.style.left = e.pageX + "px";
+  mouseCursor.style.top = e.pageY + "px";
+}
+
+const link8 = document.querySelectorAll(".main_section8 .list .link");
+const body = document.querySelector("body");
+
+for (var i = 0; i < link8.length; i++) {
+  link8[i].addEventListener("mouseover", cursorOn);
+  function cursorOn(e) {
+    mouseCursor.classList.add("hover");
+  }
+  // function cursorOn(e) {
+  //   mouseCursor.style.transform = "scale(1)";
+  //   mouseCursor.style.opacity = "1";
+  // }
+  link8[i].addEventListener("mouseout", cursorOff);
+  function cursorOff(e) {
+    mouseCursor.classList.remove("hover");
+  }
+  // function cursorOff(e) {
+  //   mouseCursor.style.transform = "scale(0)";
+  //   mouseCursor.style.opacity = "0";
+  // }
+}
+
+// document.body.style.cursor = "none";
+
+//마우스호버했을때 커서 안보이게
