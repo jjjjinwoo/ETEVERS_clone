@@ -20,9 +20,9 @@
     <!-- lenis -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
     <!-- 질문할것
-     1. 스크롤 중에2 호버해도 안밀리는법 - 헤더
-     2. 섹션6 이미지 반응형 영역 벗어나는 문제 ★★★★★
-     3. 섹션6 이너 움찔
+     1. 섹션6 이미지 위치 안맞음
+     2. 섹션6 이너 움찔
+     3. 새로고침할때 헤더 다시 검은색으로
       -->
   </head>
   <body>
@@ -79,8 +79,12 @@
           <a href="#" class="on">KR</a>
           <a href="#">EN</a>
         </div>
+        <button class="nav_btn">
+          <img src="./img/main/nav-mo-btn.png" alt="nav-mo-btn" />
+        </button>
       </nav>
       <div class="black_box"></div>
+      <div class="black_box second"></div>
     </header>
     <main>
       <div class="main_line_con">
@@ -94,146 +98,156 @@
         </div>
         <div class="scroll_down">SCROLL DOWN</div>
       </section>
-      <section class="main_section2">
-        <div class="top_hand">
-          <img src="./img/main/section2-1.png" alt="top_hand" />
-        </div>
-        <div class="text_box">
-          <p class="semi_title">Challenge for</p>
-          <h2 class="title">Transformation</h2>
-          <p class="text">
-            끊임없는 미래 지향적인 발상의 전환으로<br />
-            IT 인프라를 지속적으로 확장해<br />
-            다음 세대를 위한 IT 솔루션과 서비스를 준비합니다.
-          </p>
-        </div>
-        <div class="bottom_hand">
-          <img src="./img/main/section2-2.png" alt="bottom_hand" />
-        </div>
-      </section>
-      <section class="main_section3">
-        <div class="bg_box">
-          <img src="./img/main/section3-bg.jpg" alt="section3-bg" />
-        </div>
-        <div class="blur">
-          <div></div>
-        </div>
-        <div class="text_box">
-          <h2 class="title">
-            끊임없이 변화해 온 IT 산업의 중심에서<br />
-            에티버스그룹은 고객과 함께 성장해왔습니다.
-          </h2>
-          <p class="text">
-            에티버스그룹은 신뢰 기반의 공고한 파트너십을 기반으로 고객 사업에
-            가치를 더하는 서비스를 제공하고 있습니다.<br />
-            에티버스그룹은 사업 구조와 시스템을 끊임없이 진화하며 더 나은 미래를
-            향해 나아가겠습니다.
-          </p>
-        </div>
-        <div class="count_box">
-          <ul>
-            <li>
-              <span class="title">설립연도</span>
-              <span class="sub_title">풍부한 시장경험</span>
-              <div>
-                <span class="year" data-start="0" data-end="1993">0</span>
-                <span class="count">년</span>
-              </div>
-            </li>
-            <li>
-              <span class="title">매출</span>
-              <span class="sub_title">안정적 재무구조</span>
-              <div>
-                <span class="year" data-start="0" data-end="6009">0</span>
-                <span class="count">억</span>
-              </div>
-            </li>
-            <li>
-              <span class="title">파트너사</span>
-              <span class="sub_title">파트너십</span>
-              <div>
-                <span class="year" data-start="0" data-end="1333">0</span>
-                <span class="count">개</span>
-              </div>
-            </li>
-            <li>
-              <span class="title">직원수</span>
-              <span class="sub_title">IT 전문 인력</span>
-              <div>
-                <span class="year" data-start="0" data-end="323">0</span>
-                <span class="count">명</span>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section class="main_section4">
-        <div class="bg_box">
-          <div>
-            <img
-              class="first"
-              src="./img/main/section4-bg1.jpg"
-              alt="section4-bg1"
-            />
+      <div class="main_section234">
+        <section class="main_section2">
+          <div class="top_hand">
+            <img src="./img/main/section2-1.png" alt="top_hand" />
           </div>
-          <div>
-            <img
-              class="second"
-              src="./img/main/section4-bg2.jpg"
-              alt="section4-bg2"
-            />
+          <div class="text_box">
+            <p class="semi_title">Challenge for</p>
+            <h2 class="title">Transformation</h2>
+            <p class="text">
+              끊임없는 미래 지향적인 발상의 전환으로<br />
+              IT 인프라를 지속적으로 확장해<br />
+              다음 세대를 위한 IT 솔루션과 서비스를 준비합니다.
+            </p>
           </div>
-        </div>
-        <div class="text_box">
-          <p class="text">ETEVERS GROUP</p>
-          <h2 class="title">Innovation for a</h2>
-          <h2 class="title_fill">Better Tomorrow</h2>
-        </div>
-      </section>
-      <section class="main_section5">
-        <div class="bg_box">
-          <img src="./img/main/section5-bg.jpg" alt="section5-bg" />
-        </div>
-        <div class="text_box">
-          <h2 class="sub_title">더 좋은 미래를</h2>
-          <h2 class="title">가능하게 하는 혁신</h2>
-        </div>
-        <div class="right_box">
-          <p class="text">
-            에티버스그룹은 미래 목표 실현을 위해<br />
-            현재의 실질적인 성과와 구체적인 변화를 추구합니다.
-          </p>
-          <p class="semi_text">
-            각 분야에서 지속 가능한 가치를 창조해 나가는 에티버스와 함께 미래를
-            현실로 만들어가는 여정을 함께해 보세요.
-          </p>
-        </div>
-      </section>
-      <section class="main_section6">
-        <div class="container">
+          <div class="bottom_hand">
+            <img src="./img/main/section2-2.png" alt="bottom_hand" />
+          </div>
+        </section>
+        <section class="main_section3">
           <div class="bg_box">
-            <img src="./img/main/section6-1.jpg" alt="section6-1" />
+            <img
+              class="web"
+              src="./img/main/section3-bg.jpg"
+              alt="section3-bg"
+            />
+            <img
+              class="mob"
+              src="./img/main/section3-bg-mo.jpg"
+              alt="section3-bg-mo"
+            />
           </div>
-          <div class="center_box">
-            <div class="inner">
-              <div class="logo_box stroke">
-                <img src="./img/main/section6-2.png" alt="section6-2" />
+          <div class="blur">
+            <div></div>
+          </div>
+          <div class="text_box">
+            <h2 class="title">
+              끊임없이 변화해 온 IT 산업의 중심에서<br />
+              에티버스그룹은 고객과 함께 성장해왔습니다.
+            </h2>
+            <p class="text">
+              에티버스그룹은 신뢰 기반의 공고한 파트너십을 기반으로 고객 사업에
+              가치를 더하는 서비스를 제공하고 있습니다.<br />
+              에티버스그룹은 사업 구조와 시스템을 끊임없이 진화하며 더 나은
+              미래를 향해 나아가겠습니다.
+            </p>
+          </div>
+          <div class="count_box">
+            <ul>
+              <li>
+                <span class="title">설립연도</span>
+                <span class="sub_title">풍부한 시장경험</span>
+                <div>
+                  <span class="year" data-start="0" data-end="1993">0</span>
+                  <span class="count">년</span>
+                </div>
+              </li>
+              <li>
+                <span class="title">매출</span>
+                <span class="sub_title">안정적 재무구조</span>
+                <div>
+                  <span class="year" data-start="0" data-end="6009">0</span>
+                  <span class="count">억</span>
+                </div>
+              </li>
+              <li>
+                <span class="title">파트너사</span>
+                <span class="sub_title">파트너십</span>
+                <div>
+                  <span class="year" data-start="0" data-end="1333">0</span>
+                  <span class="count">개</span>
+                </div>
+              </li>
+              <li>
+                <span class="title">직원수</span>
+                <span class="sub_title">IT 전문 인력</span>
+                <div>
+                  <span class="year" data-start="0" data-end="323">0</span>
+                  <span class="count">명</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="main_section4">
+          <div class="bg_box">
+            <div class="first">
+              <img src="./img/main/section4-bg1.jpg" alt="section4-bg1" />
+            </div>
+            <div class="second">
+              <img src="./img/main/section4-bg2.jpg" alt="section4-bg2" />
+            </div>
+          </div>
+          <div class="text_box web">
+            <p class="text">ETEVERS GROUP</p>
+            <h2 class="title">Innovation for a</h2>
+            <h2 class="title_fill">Better Tomorrow</h2>
+          </div>
+          <div class="text_box mob">
+            <p class="text">ETEVERS GROUP</p>
+            <h2 class="title">Innovation for a</h2>
+            <h2 class="title_fill">Better Tomorrow</h2>
+          </div>
+        </section>
+      </div>
+      <div class="main_section56">
+        <section class="main_section5">
+          <div class="bg_box">
+            <img src="./img/main/section5-bg.jpg" alt="section5-bg" />
+          </div>
+          <div class="text_box">
+            <h2 class="sub_title">더 좋은 미래를</h2>
+            <h2 class="title">가능하게 하는 혁신</h2>
+          </div>
+          <div class="right_box">
+            <p class="text">
+              에티버스그룹은 미래 목표 실현을 위해<br />
+              현재의 실질적인 성과와 구체적인 변화를 추구합니다.
+            </p>
+            <p class="semi_text">
+              각 분야에서 지속 가능한 가치를 창조해 나가는 에티버스와 함께
+              미래를 현실로 만들어가는 여정을 함께해 보세요.
+            </p>
+          </div>
+        </section>
+        <section class="main_section6">
+          <div class="container">
+            <div class="bg_box">
+              <img src="./img/main/section6-1.jpg" alt="section6-1" />
+            </div>
+            <div class="center_box">
+              <div class="inner">
+                <div class="logo_box stroke">
+                  <img src="./img/main/section6-2.png" alt="section6-2" />
+                </div>
+                <div class="logo_box fill">
+                  <img src="./img/main/section6-3.png" alt="section6-3" />
+                </div>
               </div>
-              <div class="logo_box fill">
-                <img src="./img/main/section6-3.png" alt="section6-3" />
+              <div class="text_box on">
+                <h2 class="title">에티버스 그룹사</h2>
+                <p class="text">
+                  실질적인 사업 DX(디지털 트랜스포메이션)을 이끌어내는<br />
+                  통합적인 IT 솔루션과 서비스를 제공하기 위해 전문성과 혁신성을
+                  높이고 있습니다.
+                </p>
               </div>
             </div>
-            <div class="text_box on">
-              <h2 class="title">에티버스 그룹사</h2>
-              <p class="text">
-                실질적인 사업 DX(디지털 트랜스포메이션)을 이끌어내는<br />
-                통합적인 IT 솔루션과 서비스를 제공하기 위해 전문성과 혁신성을
-                높이고 있습니다.
-              </p>
-            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
       <section class="main_section7">
         <ul>
           <li class="card hover">

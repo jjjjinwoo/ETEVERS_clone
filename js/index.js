@@ -168,9 +168,9 @@ $(document).ready(function () {
 
 //섹션4 스크롤 애니메이션 - GSAP
 
-gsap.to(".main_section4 .text_box", {
+gsap.to(".main_section4 .bg_box .first", {
   scrollTrigger: {
-    trigger: ".main_section4 .text_box",
+    trigger: ".main_section4 .text_box.web",
     start: "0% 0%",
     end: "100% 0%",
     scrub: 1,
@@ -179,18 +179,21 @@ gsap.to(".main_section4 .text_box", {
   },
 });
 
-gsap.to(".main_section4 .text_box .text,.main_section4 .text_box .title", {
-  scrollTrigger: {
-    trigger: ".main_section4",
-    start: "60% 50%",
-    end: "60% 50%",
-    scrub: 1,
-    markers: false,
-  },
-  color: "white",
-});
+gsap.to(
+  ".main_section4 .text_box.web .text,.main_section4 .text_box.web .title",
+  {
+    scrollTrigger: {
+      trigger: ".main_section4",
+      start: "60% 50%",
+      end: "60% 50%",
+      scrub: 1,
+      markers: false,
+    },
+    color: "white",
+  }
+);
 
-gsap.to(".main_section4 .text_box .title_fill", {
+gsap.to(".main_section4 .text_box.web .title_fill", {
   scrollTrigger: {
     trigger: ".main_section4",
     start: "60% 50%",
@@ -204,10 +207,12 @@ gsap.to(".main_section4 .text_box .title_fill", {
 
 //섹션4 스크롤 텍스트 애니메이션 - JS
 
-const mainText4 = document.querySelector(".main_section4 .text_box .text");
-const mainTitle4 = document.querySelector(".main_section4 .text_box .title");
+const mainText4 = document.querySelector(".main_section4 .text_box.web .text");
+const mainTitle4 = document.querySelector(
+  ".main_section4 .text_box.web .title"
+);
 const mainTitleFill4 = document.querySelector(
-  ".main_section4 .text_box .title_fill"
+  ".main_section4 .text_box.web .title_fill"
 );
 
 document.addEventListener("scroll", () => {
@@ -234,20 +239,10 @@ gsap.to(".main_section6 .bg_box", {
     scrub: 1,
     markers: false,
   },
-  transform: "translate(0vw, 0%)",
+  // transform: "translate(0vw, 0%)",
+  x: 0,
+  y: 0,
   filter: "blur(20px)",
-  width: "100%",
-  overflow: "hidden",
-});
-
-gsap.to(".main_section6 .bg_box img", {
-  scrollTrigger: {
-    trigger: ".main_section5",
-    start: "60% 50%",
-    end: "140% 50%",
-    scrub: 1,
-    markers: false,
-  },
   "clip-path": "inset(0%)",
 });
 
@@ -283,6 +278,8 @@ function logoboxDelayOn2() {
     .querySelector(".main_section6 .logo_box.stroke img")
     .classList.add("on");
 }
+
+window.addEventListener("resize", ScrollTrigger.update);
 
 // 섹션7 스크롤 애니메이션 - JS
 

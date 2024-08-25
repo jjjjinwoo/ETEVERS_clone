@@ -10,7 +10,7 @@ headerText.addEventListener("mouseenter", mouseOverBlackbox);
 headerText.addEventListener("mouseenter", mouseOverText);
 
 function mouseOverBlackbox() {
-  headerBlackbox.style.transform = "translateY(0px)";
+  headerBlackbox.style.height = "460px";
 }
 
 function mouseOverText() {
@@ -24,8 +24,12 @@ function mouseOverText() {
 headerBlackbox.addEventListener("mouseleave", mouseOutBlackbox);
 
 function mouseOutBlackbox() {
-  headerBlackbox.style.transform = "translateY(-460px)";
-  scrollHeader(); // 헤더 스크롤
+  if (window.scrollY === 0) {
+    headerBlackbox.style.height = "0";
+  } else {
+    headerBlackbox.style.height = "100%";
+  }
+  // headerBlackbox.style.height = "0";
   for (var i = 0; i < headerSubmenu.length; i++) {
     headerSubmenu[i].style.height = "";
     headerSubmenu[i].style.opacity = "";
@@ -38,12 +42,24 @@ document.addEventListener("scroll", scrollHeader);
 
 function scrollHeader() {
   if (window.scrollY === 0) {
-    headerBlackbox.style.transform = "translateY(-460px)";
-  } else {
-    headerBlackbox.style.transform = "translateY(-330px)";
+    headerBlackbox.style.height = "0";
+  } else if (window.scrollY < 100) {
+    headerBlackbox.style.height = "100%";
     for (var i = 0; i < headerSubmenu.length; i++) {
       headerSubmenu[i].style.height = "";
       headerSubmenu[i].style.opacity = "";
     }
+  }
+}
+
+// 새로고침 되었을때
+
+document.addEventListener("load", loadHeader);
+
+function scrollHeader() {
+  if (window.scrollY === 0) {
+    document.querySelector(".black_box.second").style.height = "0";
+  } else {
+    document.querySelector(".black_box.second").style.height = "100%";
   }
 }
