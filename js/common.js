@@ -38,28 +38,30 @@ function mouseOutBlackbox() {
 
 // 헤더 스크롤
 
-document.addEventListener("scroll", scrollHeader);
+// document.addEventListener("scroll", scrollHeader);
 
-function scrollHeader() {
-  if (window.scrollY === 0) {
-    headerBlackbox.style.height = "0";
-  } else if (window.scrollY < 100) {
-    headerBlackbox.style.height = "100%";
-    for (var i = 0; i < headerSubmenu.length; i++) {
-      headerSubmenu[i].style.height = "";
-      headerSubmenu[i].style.opacity = "";
-    }
-  }
-}
+// function scrollHeader() {
+//   if (window.scrollY === 0) {
+//     headerBlackbox.style.height = "0";
+//   } else if (window.scrollY < 100) {
+//     headerBlackbox.style.height = "100%";
+//     for (var i = 0; i < headerSubmenu.length; i++) {
+//       headerSubmenu[i].style.height = "";
+//       headerSubmenu[i].style.opacity = "";
+//     }
+//   }
+// }
 
 // 새로고침 되었을때
 
-document.addEventListener("load", loadHeader);
+document.addEventListener("scroll", loadHeader);
 
-function scrollHeader() {
-  if (window.scrollY === 0) {
+function loadHeader() {
+  if (window.scrollY < 1) {
     document.querySelector(".black_box.second").style.height = "0";
   } else {
     document.querySelector(".black_box.second").style.height = "100%";
   }
 }
+
+console.log(document.querySelector(".black_box.second"));

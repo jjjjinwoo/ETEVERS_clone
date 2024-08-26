@@ -1,5 +1,9 @@
 "use strict";
 
+// 스크롤 트리거 불러오기(플러그인 안정화)
+
+gsap.registerPlugin(ScrollTrigger);
+
 // lenis : 스크롤 부드럽게 하는 효과
 
 const lenis = new Lenis({
@@ -7,9 +11,9 @@ const lenis = new Lenis({
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
 });
 
-lenis.on("scroll", (e) => {
-  console.log(e);
-});
+// lenis.on("scroll", (e) => {
+//   console.log(e);
+// });
 
 function raf(time) {
   lenis.raf(time);
@@ -20,41 +24,105 @@ requestAnimationFrame(raf);
 
 //섹션2 스크롤 애니메이션 - GSAP
 
-gsap.to(".top_hand", {
-  scrollTrigger: {
-    trigger: ".main_section2", //객체기준범위
-    start: "0% 20%", //시작 지점
-    end: "40% 50%", //끝 지점
-    // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
-    scrub: 1, //부드러운 스크러빙
-    markers: false, //개발가이드선
-  },
-  y: 200,
-});
+// gsap.to(".top_hand", {
+//   scrollTrigger: {
+//     trigger: ".main_section2", //객체기준범위
+//     start: "0% 20%", //시작 지점
+//     end: "40% 50%", //끝 지점
+//     // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
+//     scrub: 1, //부드러운 스크러빙
+//     markers: false, //개발가이드선
+//   },
+//   y: 200,
+// });
 
-gsap.to(".bottom_hand", {
-  scrollTrigger: {
-    trigger: ".main_section2",
-    start: "0% 20%",
-    end: "40% 50%",
-    scrub: 1,
-    markers: false,
+// gsap.to(".bottom_hand", {
+//   scrollTrigger: {
+//     trigger: ".main_section2",
+//     start: "0% 20%",
+//     end: "40% 50%",
+//     scrub: 1,
+//     markers: false,
+//   },
+//   y: -180,
+// });
+
+ScrollTrigger.matchMedia({
+  "(min-width: 843px)": function () {
+    gsap.to(".top_hand", {
+      scrollTrigger: {
+        trigger: ".main_section2", //객체기준범위
+        start: "0% 20%", //시작 지점
+        end: "40% 50%", //끝 지점
+        // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
+        scrub: 1, //부드러운 스크러빙
+        markers: false, //개발가이드선
+      },
+      y: 200,
+    });
+    gsap.to(".bottom_hand", {
+      scrollTrigger: {
+        trigger: ".main_section2",
+        start: "0% 20%",
+        end: "40% 50%",
+        scrub: 1,
+        markers: false,
+      },
+      y: -180,
+    });
   },
-  y: -180,
+  "(max-width: 842px)": function () {
+    gsap.to(".top_hand", {
+      scrollTrigger: {
+        trigger: ".main_section2", //객체기준범위
+        start: "0% 20%", //시작 지점
+        end: "40% 50%", //끝 지점
+        // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
+        scrub: 1, //부드러운 스크러빙
+        markers: false, //개발가이드선
+      },
+      y: 200,
+    });
+    gsap.to(".bottom_hand", {
+      scrollTrigger: {
+        trigger: ".main_section2",
+        start: "0% 20%",
+        end: "40% 50%",
+        scrub: 1,
+        markers: false,
+      },
+      y: -180,
+    });
+  },
 });
 
 //섹션3 스크롤 애니메이션 - GSAP
 
-gsap.to(".main_section3 .bg_box", {
-  scrollTrigger: {
-    trigger: ".main_section2",
-    start: "60% 20%",
-    end: "100% 50%",
-    scrub: 1,
-    markers: false,
+ScrollTrigger.matchMedia({
+  "(min-width: 843px)": function () {
+    gsap.to(".main_section3 .bg_box", {
+      scrollTrigger: {
+        trigger: ".main_section2",
+        start: "60% 20%",
+        end: "100% 50%",
+        scrub: 1,
+        markers: false,
+      },
+      "clip-path": "inset(0%)",
+      transform: "translateY(0px)",
+    });
   },
-  "clip-path": "inset(0%)",
-  transform: "translateY(0px)",
+  "(max-width: 842px)": function () {
+    gsap.to(".main_section3 .bg_box", {
+      scrollTrigger: {
+        trigger: ".main_section2",
+        start: "60% 20%",
+        end: "100% 50%",
+        scrub: 1,
+        markers: false,
+      },
+    });
+  },
 });
 
 gsap.to(".main_section3 .blur > div", {
@@ -205,6 +273,29 @@ gsap.to(".main_section4 .text_box.web .title_fill", {
   "-webkit-text-stroke": "1px #ffffff",
 });
 
+gsap.to(".main_section4 .text_box.mob", {
+  scrollTrigger: {
+    trigger: ".main_section4",
+    start: "60% 50%",
+    end: "60% 50%",
+    scrub: 1,
+    markers: false,
+  },
+  opacity: "1",
+  y: "0",
+});
+
+gsap.to(".main_section4 .text_box.mob .title_fill", {
+  scrollTrigger: {
+    trigger: ".main_section4",
+    start: "60% 50%",
+    end: "60% 50%",
+    scrub: 1,
+    markers: false,
+  },
+  "background-position": "0px -242px",
+});
+
 //섹션4 스크롤 텍스트 애니메이션 - JS
 
 const mainText4 = document.querySelector(".main_section4 .text_box.web .text");
@@ -231,19 +322,36 @@ document.addEventListener("scroll", () => {
 
 //섹션6 스크롤 애니메이션 - GSAP
 
-gsap.to(".main_section6 .bg_box", {
-  scrollTrigger: {
-    trigger: ".main_section5",
-    start: "60% 50%",
-    end: "140% 50%",
-    scrub: 1,
-    markers: false,
+ScrollTrigger.matchMedia({
+  "(min-width: 843px)": function () {
+    gsap.to(".main_section6 .bg_box", {
+      x: 0,
+      y: 0,
+      filter: "blur(20px)",
+      "clip-path": "inset(0%)",
+      scrollTrigger: {
+        trigger: ".main_section5",
+        start: "60% 50%",
+        end: "140% 50%",
+        scrub: 1,
+        markers: false,
+      },
+    });
   },
-  // transform: "translate(0vw, 0%)",
-  x: 0,
-  y: 0,
-  filter: "blur(20px)",
-  "clip-path": "inset(0%)",
+  "(max-width: 842px)": function () {
+    gsap.to(".main_section6 .bg_box", {
+      x: 0,
+      y: 0,
+      "clip-path": "inset(0%)",
+      scrollTrigger: {
+        trigger: ".main_section5",
+        start: "60% 50%",
+        end: "140% 50%",
+        scrub: 1,
+        markers: false,
+      },
+    });
+  },
 });
 
 //섹션6 스크롤 애니메이션 - JS
@@ -253,19 +361,38 @@ const logoboxStroke = document.querySelector(".main_section6 .logo_box.stroke");
 const logoboxFill = document.querySelector(".main_section6 .logo_box.fill img");
 
 document.addEventListener("scroll", () => {
-  if (window.scrollY > 5700) {
-    textBox6.style.transform = "translate(-50%, 0%)";
-    textBox6.style.opacity = "1";
-    setTimeout(logoboxDelayOn, 500);
-    setTimeout(logoboxDelayOn2, 1500);
+  if (window.matchMedia("(min-width: 843x)").matches) {
+    if (window.scrollY > 5700) {
+      textBox6.style.transform = "translate(-50%, 0%)";
+      textBox6.style.opacity = "1";
+      setTimeout(logoboxDelayOn, 500);
+      setTimeout(logoboxDelayOn2, 1500);
+    }
+    //   else {
+    //   textBox6.style.transform = "translate(-50%, 20%)";
+    //   textBox6.style.opacity = "0";
+    //   logoboxStroke.classList.remove("on");
+    //   logoboxFill.classList.remove("on");
+    //   document
+    //     .querySelector(".main_section6 .logo_box.stroke img")
+    //     .classList.remove("on");
+    // }
   } else {
-    textBox6.style.transform = "translate(-50%, 20%)";
-    textBox6.style.opacity = "0";
-    logoboxStroke.classList.remove("on");
-    logoboxFill.classList.remove("on");
-    document
-      .querySelector(".main_section6 .logo_box.stroke img")
-      .classList.remove("on");
+    if (window.scrollY > 5476) {
+      textBox6.style.transform = "translate(-50%, 0%)";
+      textBox6.style.opacity = "1";
+      setTimeout(logoboxDelayOn, 500);
+      setTimeout(logoboxDelayOn2, 1500);
+    }
+    //   else {
+    //   textBox6.style.transform = "translate(-50%, 20%)";
+    //   textBox6.style.opacity = "0";
+    //   logoboxStroke.classList.remove("on");
+    //   logoboxFill.classList.remove("on");
+    //   document
+    //     .querySelector(".main_section6 .logo_box.stroke img")
+    //     .classList.remove("on");
+    // }
   }
 });
 
@@ -284,6 +411,35 @@ window.addEventListener("resize", ScrollTrigger.update);
 // 섹션7 스크롤 애니메이션 - JS
 
 const textBox7 = document.querySelectorAll(".main_section7 .card .text_box");
+const groupList7 = document.querySelectorAll(
+  ".main_section7 .card .group-list"
+);
+
+// document.addEventListener("scroll", () => {
+//   if (window.matchMedia("(min-width: 843x)").matches) {
+//     if (window.scrollY > 6600) {
+//       for (let j = 0; j < textBox7.length; j++) {
+//         setTimeout(function () {
+//           textBox7[j].style.transform = "translateX(0px)";
+//           textBox7[j].style.opacity = "1";
+//         }, 500 * j);
+//       }
+//       for (let j = 0; j < groupList7.length; j++) {
+//         setTimeout(function () {
+//           groupList7[j].style.transform = "translateX(0px)";
+//           groupList7[j].style.opacity = "1";
+//         }, 500 * j);
+//       }
+//     }
+//   } else {
+//     // if (window.scrollY > 6300) {
+//     //   textBox7[0].style.transform = "translateX(0px)";
+//     //   textBox7[0].style.opacity = "1";
+//     //   groupList7[0].style.transform = "translateX(0px)";
+//     //   groupList7[0].style.opacity = "1";
+//     // }
+//   }
+// });
 
 document.addEventListener("scroll", () => {
   if (window.scrollY > 6600) {
@@ -295,10 +451,6 @@ document.addEventListener("scroll", () => {
     }
   }
 });
-
-const groupList7 = document.querySelectorAll(
-  ".main_section7 .card .group-list"
-);
 
 document.addEventListener("scroll", () => {
   if (window.scrollY > 6600) {
