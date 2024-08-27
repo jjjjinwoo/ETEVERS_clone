@@ -128,7 +128,10 @@ main {
   overflow: hidden;
   transition: 0.5s;
 }
-.nav_mobile .menu_list .depth2_list:nth-child(1) {
+.nav_mobile .menu_list .depth2_list {
+  height: 0px;
+}
+.nav_mobile .menu_list .depth1 > a.on + .depth2_list {
   height: 182px;
 }
 .nav_mobile .menu_list .depth2 > a {

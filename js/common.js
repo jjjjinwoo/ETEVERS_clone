@@ -43,7 +43,7 @@ function loadHeader() {
   }
 }
 
-// 모바일 네비
+// 모바일 네비 온오프
 
 const navBtn = document.querySelector("header .nav_btn");
 const navMobileCon = document.querySelector(".nav_mobile_con");
@@ -68,4 +68,21 @@ function offNavMobile() {
   setTimeout(function () {
     navMobileCon.style.width = "0";
   }, 700);
+  return false;
+}
+
+// 모바일 네비 리스트 업
+
+const navDepth1 = document.querySelectorAll(
+  ".nav_mobile .menu_list .depth1 > a"
+);
+
+for (var i = 0; i < navDepth1.length; i++) {
+  navDepth1[i].addEventListener("click", function (e) {
+    e.preventDefault();
+    for (var j = 0; j < navDepth1.length; j++) {
+      navDepth1[j].classList.remove("on");
+    }
+    this.classList.add("on");
+  });
 }
