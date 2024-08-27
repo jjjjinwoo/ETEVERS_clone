@@ -81,6 +81,10 @@ for (var i = 0; i < navDepth1.length; i++) {
   navDepth1[i].addEventListener("click", function (e) {
     e.preventDefault();
     for (var j = 0; j < navDepth1.length; j++) {
+      if (this.className == "on") {
+        this.classList.remove("on");
+        return false;
+      }
       navDepth1[j].classList.remove("on");
     }
     this.classList.add("on");

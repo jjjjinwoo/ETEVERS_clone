@@ -134,6 +134,16 @@ main {
 .nav_mobile .menu_list .depth1 > a.on + .depth2_list {
   height: 182px;
 }
+.nav_mobile .menu_list .depth1:nth-child(1) > a.on + .depth2_list {
+  height: 182px;
+}
+.nav_mobile .menu_list .depth1:nth-child(2) > a.on + .depth2_list {
+  height: 316px;
+}
+.nav_mobile .menu_list .depth1:nth-child(3) > a.on + .depth2_list,
+.nav_mobile .menu_list .depth1:nth-child(4) > a.on + .depth2_list {
+  height: 136px;
+}
 .nav_mobile .menu_list .depth2 > a {
   position: relative;
   display: block;

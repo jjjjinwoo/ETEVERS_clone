@@ -11,16 +11,26 @@ const lenis = new Lenis({
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
 });
 
-// lenis.on("scroll", (e) => {
-//   console.log(e);
-// });
-
 function raf(time) {
   lenis.raf(time);
   requestAnimationFrame(raf);
 }
 
 requestAnimationFrame(raf);
+
+// 언어설정
+
+const langBox = document.querySelectorAll(".lang_box a");
+
+for (var i = 0; i < langBox.length; i++) {
+  langBox[i].addEventListener("click", function (e) {
+    e.preventDefault();
+    for (var j = 0; j < langBox.length; j++) {
+      langBox[j].classList.remove("on");
+    }
+    this.classList.add("on");
+  });
+}
 
 //섹션2 스크롤 애니메이션 - GSAP
 
