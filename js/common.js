@@ -24,44 +24,48 @@ function mouseOverText() {
 headerBlackbox.addEventListener("mouseleave", mouseOutBlackbox);
 
 function mouseOutBlackbox() {
-  if (window.scrollY === 0) {
-    headerBlackbox.style.height = "0";
-  } else {
-    headerBlackbox.style.height = "100%";
-  }
-  // headerBlackbox.style.height = "0";
+  headerBlackbox.style.height = "0%";
   for (var i = 0; i < headerSubmenu.length; i++) {
     headerSubmenu[i].style.height = "";
     headerSubmenu[i].style.opacity = "";
   }
 }
 
-// 헤더 스크롤
-
-// document.addEventListener("scroll", scrollHeader);
-
-// function scrollHeader() {
-//   if (window.scrollY === 0) {
-//     headerBlackbox.style.height = "0";
-//   } else if (window.scrollY < 100) {
-//     headerBlackbox.style.height = "100%";
-//     for (var i = 0; i < headerSubmenu.length; i++) {
-//       headerSubmenu[i].style.height = "";
-//       headerSubmenu[i].style.opacity = "";
-//     }
-//   }
-// }
-
-// 새로고침 되었을때
+// 헤더 원위치 스크롤
 
 document.addEventListener("scroll", loadHeader);
 
 function loadHeader() {
-  if (window.scrollY < 1) {
+  if (window.scrollY == 0) {
     document.querySelector(".black_box.second").style.height = "0";
   } else {
     document.querySelector(".black_box.second").style.height = "100%";
   }
 }
 
-console.log(document.querySelector(".black_box.second"));
+// 모바일 네비
+
+const navBtn = document.querySelector("header .nav_btn");
+const navMobileCon = document.querySelector(".nav_mobile_con");
+const navMobile = document.querySelector(".nav_mobile_con .nav_mobile");
+const navMobileBlackBox = document.querySelector(".nav_mobile_con .black_box ");
+const navCloseBtn = document.querySelector(".nav_mobile .close_btn");
+
+navBtn.addEventListener("click", onNavMobile);
+
+function onNavMobile() {
+  navMobileCon.style.width = "100vw";
+  navMobile.style.transform = "translateX(0%)";
+  navMobileBlackBox.style.opacity = "0.5";
+}
+
+navMobileBlackBox.addEventListener("click", offNavMobile);
+navCloseBtn.addEventListener("click", offNavMobile);
+
+function offNavMobile() {
+  navMobile.style.transform = "translateX(100%)";
+  navMobileBlackBox.style.opacity = "0";
+  setTimeout(function () {
+    navMobileCon.style.width = "0";
+  }, 700);
+}

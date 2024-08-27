@@ -465,6 +465,7 @@
   z-index: 1;
   width: 50%;
   padding-right: 100px;
+  transition: 0.5s;
 }
 .main_section5 .text_box .sub_title {
   font-size: 3.75em;
@@ -1012,10 +1013,15 @@
   .main_section5 .text_box {
     width: 100%;
     padding-right: 0;
+    opacity: 0;
+    transform: translateX(20px);
   }
   .main_section5 .right_box {
     width: 100%;
     top: 0;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: 0.5s;
   }
   .main_section5 .right_box .text {
     font-size: 20px;
@@ -1024,6 +1030,9 @@
   .main_section5 .img_box {
     display: block;
     width: 100%;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: 0.5s;
   }
   .main_section5 .img_box img {
     width: 100%;
