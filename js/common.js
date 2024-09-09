@@ -62,7 +62,8 @@ function onNavMobile() {
 navMobileBlackBox.addEventListener("click", offNavMobile);
 navCloseBtn.addEventListener("click", offNavMobile);
 
-function offNavMobile() {
+function offNavMobile(e) {
+  event.preventDefault();
   navMobile.style.transform = "translateX(100%)";
   navMobileBlackBox.style.opacity = "0";
   setTimeout(function () {

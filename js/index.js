@@ -547,7 +547,3 @@ for (var i = 0; i < link8.length; i++) {
   //   mouseCursor.style.opacity = "0";
   // }
 }
-
-// document.body.style.cursor = "none";
-
-//마우스호버했을때 커서 안보이게
