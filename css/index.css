@@ -256,6 +256,7 @@
   display: flex;
   justify-content: center;
 }
+.main_section3 .bg_box img.web { width: 100%; object-fit: cover;}
 .main_section3 .bg_box .mob {
   display: none;
 }
@@ -377,6 +378,9 @@
 .main_section4 .bg_box > div {
   height: 100vh;
   overflow: hidden;
+}
+.main_section4 .bg_box > div.first img {
+  width: 100%;
 }
 .main_section4 .text_box {
   position: absolute;
